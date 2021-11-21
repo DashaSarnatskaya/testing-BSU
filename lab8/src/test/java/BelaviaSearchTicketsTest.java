@@ -3,10 +3,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class BelaviaFindTicketsTest {
+public class BelaviaSearchTicketsTest {
 
     @Test
-    public void viewTableOfArrivals()  {
+    public void searchTicketsTest()  {
         WebDriver driver=new ChromeDriver();
         BelaviaHomePage belaviaHomePage = new BelaviaHomePage(driver);
         belaviaHomePage.openPage();
