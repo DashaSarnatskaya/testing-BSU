@@ -9,7 +9,7 @@ public class BelaviaHomePage {
     private WebDriver driver;
 
     private By placeOfDepartureInputLocator = By.xpath("/html/body/div[4]/div[1]/div/div/div[2]/form/div[1]/div[1]/div/input");
-    private By destinationInputLocator= By.xpath("/html/body/div[4]/div[1]/div/div/div[2]/form/div[1]/div[2]/div/input");
+    private By destinationInputLocator = By.xpath("/html/body/div[4]/div[1]/div/div/div[2]/form/div[1]/div[2]/div/input");
     private By oneWayButton = By.xpath("/html/body/div[4]/div[1]/div/div/div[2]/form/div[2]/div[1]/div/label[1]");
     private By calendarButton = By.xpath("/html/body/div[4]/div[1]/div/div/div[2]/form/div[2]/div[2]/div[1]/div/a/i");
     private By dateButton = By.xpath("/html/body/div[4]/div[1]/div/div/div[2]/div/div/div[2]/table/tbody/tr[4]/td[4]/a");
@@ -33,24 +33,28 @@ public class BelaviaHomePage {
         findByLocator(placeOfDepartureInputLocator).sendKeys(placeOfDeparture);
         return this;
     }
-    public BelaviaHomePage inputDestination (String destination) {
+
+    public BelaviaHomePage inputDestination(String destination) {
         findByLocator(destinationInputLocator).sendKeys(destination);
         return this;
     }
 
 
-     public BelaviaHomePage clickOnOneWayButton(){
+    public BelaviaHomePage clickOnOneWayButton() {
         findByLocator(oneWayButton).click();
         return this;
-     }
-    public BelaviaHomePage clickOnCalendarButton(){
+    }
+
+    public BelaviaHomePage clickOnCalendarButton() {
         findByLocator(calendarButton).click();
         return this;
     }
-    public BelaviaHomePage clickOnDateButton(){
+
+    public BelaviaHomePage clickOnDateButton() {
         findByLocator(dateButton).click();
         return this;
     }
+
     public BelaviaHomePage clickOnSearchButton() {
         findByLocator(searchButton).click();
         return this;
