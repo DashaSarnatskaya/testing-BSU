@@ -2,18 +2,19 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class BelaviaSearchTicketsTest {
-    WebDriver driver = new ChromeDriver();
+    private WebDriver driver;
 
-    @BeforeTest
-    public void browserSetup() {
+    @BeforeMethod(alwaysRun = true)
+    public void setupDriver() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
         driver = new ChromeDriver(options);
     }
+
 
     @Test
     public void searchTicketsTest() {
