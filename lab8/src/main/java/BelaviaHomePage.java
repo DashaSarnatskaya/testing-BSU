@@ -8,12 +8,12 @@ public class BelaviaHomePage {
     public static String TABLE_PAGE_URL = "https://belavia.by/";
     private WebDriver driver;
 
-    private By placeOfDepartureInputLocator = By.xpath("/html/body/div[4]/div[1]/div/div/div[2]/form/div[1]/div[1]/div/input");
-    private By destinationInputLocator = By.xpath("/html/body/div[4]/div[1]/div/div/div[2]/form/div[1]/div[2]/div/input");
-    private By oneWayButton = By.xpath("/html/body/div[4]/div[1]/div/div/div[2]/form/div[2]/div[1]/div/label[1]");
-    private By calendarButton = By.xpath("/html/body/div[4]/div[1]/div/div/div[2]/form/div[2]/div[2]/div[1]/div/a/i");
-    private By dateButton = By.xpath("/html/body/div[4]/div[1]/div/div/div[2]/div/div/div[2]/table/tbody/tr[4]/td[4]/a");
-    private By searchButton = By.xpath("/html/body/div[4]/div[1]/div/div/div[2]/form/div[2]/div[4]/div/button");
+    private By placeOfDepartureInputLocator = By.xpath("//input[@name='OriginLocation_Combobox']");
+    private By destinationInputLocator = By.xpath("//input[@name='DestinationLocation_Combobox']");
+    private By oneWayButton = By.xpath("//label[@for = 'JourneySpan_Ow']");
+    private By calendarButton = By.xpath("//*[@id='step-2']/div[2]/div[1]/div/a/i");
+    private By dateButton = By.xpath("//*[@id='calendar']/div/div[2]/table/tbody/tr[4]/td[4]/a");
+    private By searchButton = By.xpath("//button[@class='button btn-large btn btn-b2-green ui-corner-all']");
 
     public BelaviaHomePage(WebDriver driver) {
         this.driver = driver;
