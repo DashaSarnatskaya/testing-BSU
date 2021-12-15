@@ -21,7 +21,7 @@ public class DriverSingleton {
             }
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
-            WebDriverManager.chromedriver().setup();
+            WebDriverManager.chromedriver().driverVersion("96.0.4664.45").setup();
             driver = new ChromeDriver(options);
         }
         return driver;
