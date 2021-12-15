@@ -11,17 +11,15 @@ public class BelaviaSearchTicketsTest extends CommonConditions {
     private final String EXPECTED_FLIGHT_NUMBER = "SVO";
 
     @Test
-    public void searchTicketsTest() throws InterruptedException {
+    public void searchTicketsTest() {
         Location testLocations = LocationsCreator.locationsFromProperty();
         BelaviaHomePage homePage = new BelaviaHomePage(driver);
-        homePage.openPage()
+        BelaviaHomeResultPage resultPage = homePage.openPage()
                 .clickOnDeparturePlace()
-                .inputDeparturePlace(testLocations.getDeparturePlace());
-        Thread.sleep(2000);
-        homePage.clickOnDestinationPlace()
-                .inputDestination(testLocations.getDestinationPlace());
-        Thread.sleep(2000);
-        BelaviaHomeResultPage resultPage = homePage.clickOnOneWayButton()
+                .inputDeparturePlace(testLocations.getDeparturePlace())
+                .clickOnDestinationPlace()
+                .inputDestination(testLocations.getDestinationPlace())
+                .clickOnOneWayButton()
                 .clickOnCalendarButton()
                 .clickOnDepartDateButton()
                 .clickOnSearchButton();
