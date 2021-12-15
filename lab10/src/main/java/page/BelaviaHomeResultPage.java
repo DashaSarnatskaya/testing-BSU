@@ -10,6 +10,7 @@ import java.util.List;
 public class BelaviaHomeResultPage extends AbstractPage {
 
     private final By flightNumberLocator = By.xpath("//div[text()='SVO']");
+    private final By priceForEconomTicketsLocator=By.xpath("//div[@class='price-value']");
 
     public BelaviaHomeResultPage(WebDriver driver) {
         super(driver);
@@ -25,6 +26,7 @@ public class BelaviaHomeResultPage extends AbstractPage {
     public String getFlightNumber() {
         return getElementListText(flightNumberLocator);
     }
+    public String getPrice(){return getElementListText(priceForEconomTicketsLocator);}
 
     @Override
     protected WebElement findByLocator(By locator) {

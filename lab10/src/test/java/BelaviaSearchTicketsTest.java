@@ -8,7 +8,8 @@ import service.LocationsCreator;
 
 public class BelaviaSearchTicketsTest extends CommonConditions {
 
-    private final String EXPECTED_FLIGHT_NUMBER = "SVO";
+    private final String EXPECTED_AIRPORT = "SVO";
+    private final String EXPECTED_PRICE = "140,46 BYN";
 
     @Test
     public void searchTicketsTest() {
@@ -24,10 +25,12 @@ public class BelaviaSearchTicketsTest extends CommonConditions {
                 .clickOnDepartDateButton()
                 .clickOnSearchButton();
         resultPage.openPage();
-
-        String resultFlightNumber = resultPage.getFlightNumber();
-
-        Assert.assertEquals(EXPECTED_FLIGHT_NUMBER, resultFlightNumber);
+//
+//        String resultFlightNumber = resultPage.getFlightNumber();
+//        System.out.println(resultPage.getFlightNumber());
+//        Assert.assertEquals(EXPECTED_AIRPORT, resultFlightNumber);
+        String rezPrice = resultPage.getPrice();
+        Assert.assertEquals(EXPECTED_PRICE,rezPrice);
     }
 
 }
