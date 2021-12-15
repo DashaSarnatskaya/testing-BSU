@@ -1,22 +1,15 @@
 package page;
 
-import model.Date;
-import model.Location;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import javax.xml.crypto.Data;
-import java.util.logging.Level;
 
 public class BelaviaHomePage extends AbstractPage {
+
     public static String HOME_PAGE_URL = "https://belavia.by/";
 
     private final By destinationPlaceInputLocator = By.xpath("//input[@id='DestinationLocation_Combobox']");
@@ -28,14 +21,12 @@ public class BelaviaHomePage extends AbstractPage {
     private final By departDateButton = By.xpath("//*[@id='calendar']/div/div[2]/table/tbody/tr[4]/td[4]/a");
     private final By returnDateButton = By.xpath("//*[@id='calendar']/div/div[2]/table/tbody/tr[4]/td[6]/a");
     private final By searchButton = By.xpath("//button[@class='button btn-large btn btn-b2-green ui-corner-all']");
-//    private final By msqInputLocator = By.xpath("//li[@aria-selected='true']");
-//    private final By mowInputLocator = By.xpath("");
-
 
     public BelaviaHomePage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }
+
     @Override
     public BelaviaHomePage openPage() {
         driver.navigate().to(HOME_PAGE_URL);
@@ -56,7 +47,7 @@ public class BelaviaHomePage extends AbstractPage {
     }
 
     public BelaviaHomePage inputDeparturePlace(String departurePlace) {
-        WebElement element= findByLocator(departurePlaceInputLocator);
+        WebElement element = findByLocator(departurePlaceInputLocator);
         element.sendKeys(departurePlace);
         element.sendKeys(Keys.ARROW_UP);
         element.sendKeys(Keys.ARROW_UP);
