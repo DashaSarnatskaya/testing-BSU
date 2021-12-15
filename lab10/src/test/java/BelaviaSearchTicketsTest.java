@@ -10,53 +10,30 @@ import page.BelaviaHomeResultPage;
 import service.DatesCreator;
 import service.LocationsCreator;
 
-public class BelaviaSearchTicketsTest extends CommonConditions{
+public class BelaviaSearchTicketsTest extends CommonConditions {
     // private WebDriver driver;
-
-@BeforeMethod(alwaysRun = true)
-// public void setupDriver() {
-//       ChromeOptions options = new ChromeOptions();
-//     options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
-//       driver = new ChromeDriver(options);
-//  }
-
-//    @Test
-//    public void searchTicketsOneWayTest()  throws InterruptedException {
-//        BelaviaHomePage belaviaHomePage = new BelaviaHomePage(driver);
-//        belaviaHomePage.openPage();
-//        belaviaHomePage.inputDeparturePlace();
-//        Thread.sleep(2000);
-//        belaviaHomePage.inputDestinationPlace();
-//        Thread.sleep(2000);
-//        belaviaHomePage.clickOnOneWayButton();
-//        Thread.sleep(2000);
-//        belaviaHomePage.clickOnCalendarButton();
-//        Thread.sleep(2000);
-//        belaviaHomePage.clickOnDepartDateButton();
-//        Thread.sleep(2000);
-//        belaviaHomePage.clickOnSearchButton();
-//        Thread.sleep(2000);
-//
-//        BelaviaHomeResultPage resultPage = new BelaviaHomeResultPage(driver);
-//        resultPage.openResultPage();
-//        Assert.assertEquals(belaviaHomePage.getCurrentUrl(), resultPage.getCurrentUrl());
-//    }
+    private final String EXPECTED_FLIGHT_NUMBER = "SVO";
 
     @Test
-    public void searchTicketsTest(){
+    public void searchTicketsTest() throws InterruptedException {
         Location testLocations = LocationsCreator.locationsFromProperty();
-        Date testDates= DatesCreator.datesFromProperty();
-        BelaviaHomePage homePage=new BelaviaHomePage(driver);
+        BelaviaHomePage homePage = new BelaviaHomePage(driver);
         homePage.openPage()
-                .enterLocation(testLocations.getDeparturePlace(),testLocations.getDestinationPlace())
-                .clickOnWayButton()
-                .enterDate(testDates.getDepartDate(),testDates.getReturnDate());
-        homePage.searchTickets();
-        //Assert.assertTrue(homePage.isSa);
+                .clickOnDeparturePlace()
+                .inputDeparturePlace(testLocations.getDeparturePlace());
+        Thread.sleep(2000);
+        homePage.clickOnDestinationPlace()
+                .inputDestination(testLocations.getDestinationPlace());
+        Thread.sleep(2000);
+        BelaviaHomeResultPage resultPage = homePage.clickOnOneWayButton()
+                .clickOnCalendarButton()
+                .clickOnDepartDateButton()
+                .clickOnSearchButton();
+        resultPage.openPage();
+
+        String resultFlightNumber = resultPage.getFlightNumber();
+
+        Assert.assertEquals(EXPECTED_FLIGHT_NUMBER, resultFlightNumber);
     }
 
-//    @AfterMethod(alwaysRun = true)
-//    public void closeBrowser(){
-//        driver.quit();
-//    }
 }
