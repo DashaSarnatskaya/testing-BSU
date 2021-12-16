@@ -19,7 +19,7 @@ public class TimetablePage {
 
     private By searchButton = By.xpath("//button[text()='Найти']");
 
-    private By suggestionsButton = By.xpath("//div[@class='offers clear']//child::a[text()='Все предложения']");
+
 
     private By menuButton = By.xpath("//a[@id='select-main-menu']");
     private By timetableButton = By.xpath("//a[text()='Расписание рейсов']");
