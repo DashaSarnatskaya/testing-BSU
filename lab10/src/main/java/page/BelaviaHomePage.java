@@ -21,7 +21,7 @@ public class BelaviaHomePage extends AbstractPage {
     private final By departDateButton = By.xpath("//*[@id='calendar']/div/div[2]/table/tbody/tr[4]/td[4]/a");
     private final By returnDateButton = By.xpath("//*[@id='calendar']/div/div[2]/table/tbody/tr[4]/td[6]/a");
     private final By searchButton = By.xpath("//button[@class='button btn-large btn btn-b2-green ui-corner-all']");
-    private final By suggestionsButton = By.xpath("//div[@class='offers clear']//child::a[text()='Все предложения']");
+    private final By suggestionsButton = By.xpath("/html/body/div[4]/div[3]/div/div[1]/a");
     private final By languageButton=By.xpath("//a[@id='select-lang']");
     private final By enLangButton=By.xpath("//a[@data-iso='EN']");
 
