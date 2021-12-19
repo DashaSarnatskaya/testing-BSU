@@ -60,7 +60,7 @@ public class HomePageTests extends CommonConditions {
     }
 
     @Test
-    public void viewTimetable() throws InterruptedException {
+    public void viewTimetable() {
         BelaviaHomePage belaviaHomePage = new BelaviaHomePage(driver);
         Location testLocations = LocationsCreator.locationsFromProperty();
         TimetableResultPage timetablePage = new TimetableResultPage(driver);
