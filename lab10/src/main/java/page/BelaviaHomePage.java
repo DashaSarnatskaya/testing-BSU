@@ -29,8 +29,9 @@ public class BelaviaHomePage extends AbstractPage {
     private final By memberIdInputLocator = By.xpath("//input[contains(@id, 'MemberId')]");
     private final By passwordInputLocator = By.xpath("//input[contains(@id, 'Password')]");
     private final By singInButton = By.xpath("//button[contains(@class, 'login')]");
-    private final By menuButton=By.xpath("//a[contains(@id,'main-menu')]");
-    private final By timetableButton=By.xpath("//a[contains(@href,'/time-table/')]");
+    private final By menuButton = By.xpath("//a[contains(@id,'main-menu')]");
+    private final By timetableButton = By.xpath("//a[contains(@href,'/time-table/')]");
+    private final By departBoardButton = By.xpath("//a[contains(@href,'/table/')]");
 
     public BelaviaHomePage(WebDriver driver) {
         super(driver);
@@ -155,15 +156,22 @@ public class BelaviaHomePage extends AbstractPage {
         element.click();
         return new BelaviaHomeResultPage(driver);
     }
-    public BelaviaHomePage clickOnMenuButton(){
-        WebElement element=findByLocator(menuButton);
+
+    public BelaviaHomePage clickOnMenuButton() {
+        WebElement element = findByLocator(menuButton);
         element.click();
         return this;
     }
 
-    public TimetablePage clickOnTimeTableButton(){
-        WebElement element=findByLocator(timetableButton);
+    public TimetablePage clickOnTimeTableButton() {
+        WebElement element = findByLocator(timetableButton);
         element.click();
         return new TimetablePage(driver);
+    }
+
+    public DepartureBoardPage clickOnDepartBoard() {
+        WebElement element = findByLocator(departBoardButton);
+        element.click();
+        return new DepartureBoardPage(driver);
     }
 }
