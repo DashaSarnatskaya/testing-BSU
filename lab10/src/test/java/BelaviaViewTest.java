@@ -13,11 +13,11 @@ public class BelaviaViewTest extends CommonConditions {
     @Test
     public void viewSuggestions() throws InterruptedException {
         BelaviaHomePage homePage = new BelaviaHomePage(driver);
-        BelaviaSuggestionsResultPage flightNumber = homePage.openPage()
+        String flightNumber = homePage.openPage()
                 .clickOnSuggestionsButton()
-                .clickOnLocation();
-                //.getFlightNumber();
-        //Assert.assertEquals(EXPECTED_FLIGHT_NUMBER, flightNumber);
+                .clickOnLocation()
+                .getFlightNumber();
+        Assert.assertEquals(EXPECTED_FLIGHT_NUMBER, flightNumber);
     }
 
 //    @Test
