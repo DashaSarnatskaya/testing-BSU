@@ -8,7 +8,7 @@ import service.LocationsCreator;
 
 public class BelaviaViewTest extends CommonConditions {
     private final String EXPECTED_FLIGHT_NUMBER = "B2 736";
-    private final String EXPECTED_ARRIVAL_TIME="09:10";
+    private final String EXPECTED_ARRIVAL_TIME = "09:10";
 
     @Test
     public void viewSuggestions() throws InterruptedException {
@@ -17,7 +17,6 @@ public class BelaviaViewTest extends CommonConditions {
                 .clickOnSuggestionsButton()
                 .clickOnLocation()
                 .getFlightNumber();
-        System.out.println(flightNumber);
         Assert.assertEquals(EXPECTED_FLIGHT_NUMBER, flightNumber);
     }
 
@@ -37,7 +36,7 @@ public class BelaviaViewTest extends CommonConditions {
                 .clickOnCalendarButton()
                 .clickOnDepartDateButton()
                 .clickOnSearchButton();
-        Assert.assertEquals(timetablePage.getArrivalTime(),EXPECTED_ARRIVAL_TIME);
+        Assert.assertEquals(EXPECTED_ARRIVAL_TIME, timetablePage.getArrivalTime());
 
     }
 }

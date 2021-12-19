@@ -9,7 +9,7 @@ import service.LocationsCreator;
 public class BelaviaSearchTicketsTest extends CommonConditions {
 
     private final String EXPECTED_AIRPORT = "SVO";
-    private final String EXPECTED_PRICE = "140,46 BYN";
+    private final String EXPECTED_PRICE = "132,73 BYN";
     private final String EXPECTED_ROUTE = "Минск - Москва";
 
     @Test
@@ -26,9 +26,7 @@ public class BelaviaSearchTicketsTest extends CommonConditions {
                 .clickOnDepartDateButton()
                 .clickOnSearchButton();
 
-    String resultAirportName = resultPage.getAirportName();
-        System.out.println(resultAirportName);
-        Assert.assertEquals(EXPECTED_AIRPORT, resultAirportName);
+        Assert.assertEquals(EXPECTED_AIRPORT, resultPage.getAirportName());
     }
 
     @Test
@@ -45,9 +43,7 @@ public class BelaviaSearchTicketsTest extends CommonConditions {
                 .clickOnReturnDateButton()
                 .clickOnSearchButton();
 
-        String resultRoute = resultPage.getRoute();
-        System.out.println(resultRoute);
-        Assert.assertEquals(EXPECTED_ROUTE, resultRoute);
+        Assert.assertEquals(EXPECTED_PRICE, resultPage.getPrice());
 
     }
 }

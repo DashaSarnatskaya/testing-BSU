@@ -22,10 +22,8 @@ public class BelaviaLogInTest extends CommonConditions {
                 .clickOnPassword()
                 .inputPassword(user.getPassword())
                 .clickOnSingInButton();
-        //resultPage.openPage();
-        String resultUserName = resultPage.getUserName();
-        System.out.println(resultUserName);
-      Assert.assertEquals(EXPECTED_USER_NAME, resultUserName);
+
+        Assert.assertEquals(EXPECTED_USER_NAME, resultPage.getUserName());
 
     }
 
