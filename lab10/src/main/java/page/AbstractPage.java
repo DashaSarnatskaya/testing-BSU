@@ -16,6 +16,7 @@ public abstract class AbstractPage {
     protected AbstractPage(WebDriver driver) {
         this.driver = driver;
     }
+
     protected abstract AbstractPage openPage();
 
     protected WebElement findByLocator(By locator) {
@@ -34,11 +35,12 @@ public abstract class AbstractPage {
         return new WebDriverWait(driver, WAIT_TIMEOUT).until(ExpectedConditions.presenceOfAllElementsLocatedBy(locator));
     }
 
-    public String getElementText(By locator){
+    public String getElementText(By locator) {
         WebElement element = findByLocator(locator);
         return element.getText();
     }
-    public String getElementListText(By locator){
+
+    public String getElementListText(By locator) {
         List<WebElement> element = findAll(locator);
         return element.get(0).getText();
     }

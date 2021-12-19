@@ -22,14 +22,14 @@ public class BelaviaHomePage extends AbstractPage {
     private final By returnDateButton = By.xpath("//td[@data-year='2022']//a[text()='22']");
     private final By searchButton = By.xpath("//button[contains(@onclick,'kupit')]");
     private final By suggestionsButton = By.xpath("//div[@class='offers clear']//a[contains(@href,'/predlozheniya/')]");
-    private final By languageButton=By.xpath("//a[@id='select-lang']");
-    private final By enLangButton=By.xpath("//a[@data-iso='EN']");
-    private final By logInButton=By.xpath("//a[contains(@id, 'select-member')]");
-    private final By memberLocator=By.xpath("//label[contains(@for,'MemberId')]");
-    private final By passwordLocator=By.xpath("//label[contains(@for,'Password')]");
-    private final By memberIdInputLocator=By.xpath("//input[contains(@id, 'MemberId')]");
-    private final By passwordInputLocator=By.xpath("//input[contains(@id, 'Password')]");
-    private final By singInButton=By.xpath("//button[contains(@class, 'login')]");
+    private final By languageButton = By.xpath("//a[@id='select-lang']");
+    private final By enLangButton = By.xpath("//a[@data-iso='EN']");
+    private final By logInButton = By.xpath("//a[contains(@id, 'select-member')]");
+    private final By memberLocator = By.xpath("//label[contains(@for,'MemberId')]");
+    private final By passwordLocator = By.xpath("//label[contains(@for,'Password')]");
+    private final By memberIdInputLocator = By.xpath("//input[contains(@id, 'MemberId')]");
+    private final By passwordInputLocator = By.xpath("//input[contains(@id, 'Password')]");
+    private final By singInButton = By.xpath("//button[contains(@class, 'login')]");
 
     public BelaviaHomePage(WebDriver driver) {
         super(driver);
@@ -78,10 +78,12 @@ public class BelaviaHomePage extends AbstractPage {
         findByLocator(oneWayButton).click();
         return this;
     }
-    public BelaviaHomePage clickOnRoundTripButton(){
+
+    public BelaviaHomePage clickOnRoundTripButton() {
         findByLocator(roundTripButton).click();
         return this;
     }
+
     public BelaviaHomePage clickOnCalendarButton() {
         findByLocator(calendarButton).click();
         return this;
@@ -91,10 +93,12 @@ public class BelaviaHomePage extends AbstractPage {
         findByLocator(departDateButton).click();
         return this;
     }
-public BelaviaHomePage clickOnReturnDateButton(){
+
+    public BelaviaHomePage clickOnReturnDateButton() {
         findByLocator(returnDateButton).click();
         return this;
-}
+    }
+
     public BelaviaHomeResultPage clickOnSearchButton() {
         WebElement element = findByLocator(searchButton);
         element.click();
@@ -107,41 +111,46 @@ public BelaviaHomePage clickOnReturnDateButton(){
         return new BelaviaSuggestionsPage(driver);
     }
 
-    public BelaviaHomePage clickOnLanguageButton(){
+    public BelaviaHomePage clickOnLanguageButton() {
         findByLocator(languageButton).click();
         return this;
     }
-    public BelaviaHomeResultPage clickOnEnLangButton(){
+
+    public BelaviaHomeResultPage clickOnEnLangButton() {
         WebElement element = findByLocator(enLangButton);
         element.click();
         return new BelaviaHomeResultPage(driver);
     }
 
-    public BelaviaHomePage clickOnLogInButton(){
+    public BelaviaHomePage clickOnLogInButton() {
         findByLocator(logInButton).click();
         return this;
     }
-public BelaviaHomePage clickOnMemberId(){
+
+    public BelaviaHomePage clickOnMemberId() {
         findByLocatorClickable(memberLocator);
         return this;
-}
-public BelaviaHomePage clickOnPassword(){
+    }
+
+    public BelaviaHomePage clickOnPassword() {
         findByLocatorClickable(passwordLocator);
         return this;
-}
+    }
 
-    public BelaviaHomePage inputMemberId(String memberId){
+    public BelaviaHomePage inputMemberId(String memberId) {
         WebElement element = findByLocator(memberIdInputLocator);
         element.sendKeys(memberId);
         return this;
     }
-    public BelaviaHomePage inputPassword(String password){
+
+    public BelaviaHomePage inputPassword(String password) {
         WebElement element = findByLocator(passwordInputLocator);
         element.sendKeys(password);
         return this;
     }
-    public BelaviaHomeResultPage clickOnSingInButton(){
-        WebElement element=findByLocator(singInButton);
+
+    public BelaviaHomeResultPage clickOnSingInButton() {
+        WebElement element = findByLocator(singInButton);
         element.click();
         return new BelaviaHomeResultPage(driver);
     }

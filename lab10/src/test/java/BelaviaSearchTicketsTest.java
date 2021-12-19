@@ -27,13 +27,13 @@ public class BelaviaSearchTicketsTest extends CommonConditions {
                 .clickOnSearchButton();
         resultPage.openPage();
 
-       String resultAirportName = resultPage.getAirportName();
-       System.out.println(resultAirportName);
-       Assert.assertEquals(EXPECTED_AIRPORT, resultAirportName);
+        String resultAirportName = resultPage.getAirportName();
+        System.out.println(resultAirportName);
+        Assert.assertEquals(EXPECTED_AIRPORT, resultAirportName);
     }
 
     @Test
-    public void searchTicketsRoundTripTest(){
+    public void searchTicketsRoundTripTest() {
         Location testLocations = LocationsCreator.locationsFromProperty();
         BelaviaHomePage homePage = new BelaviaHomePage(driver);
         BelaviaHomeResultPage resultPage = homePage.openPage()
@@ -47,9 +47,9 @@ public class BelaviaSearchTicketsTest extends CommonConditions {
                 .clickOnSearchButton();
         resultPage.openPage();
 
-        String resultRoute=resultPage.getRoute();
+        String resultRoute = resultPage.getRoute();
         System.out.println(resultRoute);
-        Assert.assertEquals(EXPECTED_ROUTE,resultRoute);
+        Assert.assertEquals(EXPECTED_ROUTE, resultRoute);
 
     }
 

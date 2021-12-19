@@ -9,7 +9,7 @@ import service.UserCreator;
 
 public class BelaviaLogInTest extends CommonConditions {
 
-    private final String EXPECTED_USER_NAME="TATSIANA SHUBENOK";
+    private final String EXPECTED_USER_NAME = "TATSIANA SHUBENOK";
 
     @Test
     public void LogInTest() {
@@ -23,8 +23,8 @@ public class BelaviaLogInTest extends CommonConditions {
                 .inputPassword(user.getPassword())
                 .clickOnSingInButton();
         resultPage.openPage();
-        String resultUserName=resultPage.getUserName();
-        Assert.assertEquals(EXPECTED_USER_NAME,resultUserName);
+        String resultUserName = resultPage.getUserName();
+        Assert.assertEquals(EXPECTED_USER_NAME, resultUserName);
 
     }
 

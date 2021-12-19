@@ -6,7 +6,7 @@ import page.BelaviaHomePage;
 import page.TimetablePage;
 
 public class BelaviaViewTest extends CommonConditions {
-    private final String EXPECTED_FLIGHT_NUMBER="B2 736";
+    private final String EXPECTED_FLIGHT_NUMBER = "B2 736";
 
     @Test
     public void viewSuggestions() throws InterruptedException {
@@ -15,14 +15,14 @@ public class BelaviaViewTest extends CommonConditions {
                 .clickOnSuggestionsButton()
                 .clickOnLocation()
                 .getFlightNumber();
-        Assert.assertEquals(EXPECTED_FLIGHT_NUMBER,flightNumber);
+        Assert.assertEquals(EXPECTED_FLIGHT_NUMBER, flightNumber);
     }
 
     @Test
     public void viewTimetable() throws InterruptedException {
         WebDriver driver = new ChromeDriver();
         BelaviaHomePage belaviaHomePage = new BelaviaHomePage(driver);
-        TimetablePage timetablePage  = new TimetablePage(driver);
+        TimetablePage timetablePage = new TimetablePage(driver);
         belaviaHomePage.openPage();
         Thread.sleep(2000);
         //belaviaHomePage.clickOnMenuButton();

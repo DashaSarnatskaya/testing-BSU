@@ -4,7 +4,7 @@ import page.BelaviaHomePage;
 import page.BelaviaHomeResultPage;
 
 public class BelaviaChangeLanguageTest extends CommonConditions {
- private final String url="https://en.belavia.by/";
+    private final String url = "https://en.belavia.by/";
 
     @Test
     public void changeLanguage() {

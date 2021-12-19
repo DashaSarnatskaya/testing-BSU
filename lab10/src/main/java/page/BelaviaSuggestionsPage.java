@@ -6,9 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 
+public class BelaviaSuggestionsPage extends AbstractPage {
+    private final By locationLocator = By.xpath("//a[contains(@href,'TB')]");
 
-public class BelaviaSuggestionsPage extends AbstractPage{
-private final By locationLocator = By.xpath("//a[contains(@href,'TB')]");
     public BelaviaSuggestionsPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -29,7 +29,7 @@ private final By locationLocator = By.xpath("//a[contains(@href,'TB')]");
         return super.findByLocatorClickable(locator);
     }
 
-    public BelaviaSuggestionsResultPage clickOnLocation(){
+    public BelaviaSuggestionsResultPage clickOnLocation() {
         WebElement element = findByLocator(locationLocator);
         element.click();
         return new BelaviaSuggestionsResultPage(driver);
