@@ -26,8 +26,8 @@ public class BelaviaSearchTicketsTest extends CommonConditions {
                 .clickOnDepartDateButton()
                 .clickOnSearchButton();
 
-    String resultAirportName = resultPage.getAirportName();
-        System.out.println(resultAirportName);
+//    String resultAirportName = resultPage.getAirportName();
+//        System.out.println(resultAirportName);
       //  Assert.assertEquals(EXPECTED_AIRPORT, resultAirportName);
     }
 
@@ -45,8 +45,8 @@ public class BelaviaSearchTicketsTest extends CommonConditions {
                 .clickOnReturnDateButton()
                 .clickOnSearchButton();
 
-        String resultRoute = resultPage.getRoute();
-        System.out.println(resultRoute);
+//        String resultRoute = resultPage.getRoute();
+//        System.out.println(resultRoute);
        // Assert.assertEquals(EXPECTED_ROUTE, resultRoute);
 
     }
