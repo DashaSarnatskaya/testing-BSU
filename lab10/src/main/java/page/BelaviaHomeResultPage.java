@@ -26,7 +26,7 @@ public class BelaviaHomeResultPage extends AbstractPage {
     }
 
     public String getAirportName() {
-        return getElementListText(flightNumberLocator);
+        return getElementText(flightNumberLocator);
     }
 
     public String getPrice() {

@@ -11,7 +11,7 @@ import java.util.List;
 
 public abstract class AbstractPage {
     protected WebDriver driver;
-    protected final int WAIT_TIMEOUT = 20;
+    protected final int WAIT_TIMEOUT = 30;
 
     protected AbstractPage(WebDriver driver) {
         this.driver = driver;

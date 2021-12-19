@@ -25,32 +25,31 @@ public class BelaviaSearchTicketsTest extends CommonConditions {
                 .clickOnCalendarButton()
                 .clickOnDepartDateButton()
                 .clickOnSearchButton();
-        resultPage.openPage();
 
-        String resultAirportName = resultPage.getAirportName();
+    String resultAirportName = resultPage.getAirportName();
         System.out.println(resultAirportName);
         Assert.assertEquals(EXPECTED_AIRPORT, resultAirportName);
     }
 
-//    @Test
-//    public void searchTicketsRoundTripTest() {
-//        Location testLocations = LocationsCreator.locationsFromProperty();
-//        BelaviaHomePage homePage = new BelaviaHomePage(driver);
-//        BelaviaHomeResultPage resultPage = homePage.openPage()
-//                .clickOnDeparturePlace()
-//                .inputDeparturePlace(testLocations.getDeparturePlace())
-//                .clickOnDestinationPlace()
-//                .inputDestination(testLocations.getDestinationPlace())
-//                .clickOnRoundTripButton()
-//                .clickOnDepartDateButton()
-//                .clickOnReturnDateButton()
-//                .clickOnSearchButton();
-//        resultPage.openPage();
+    @Test
+    public void searchTicketsRoundTripTest() {
+        Location testLocations = LocationsCreator.locationsFromProperty();
+        BelaviaHomePage homePage = new BelaviaHomePage(driver);
+        BelaviaHomeResultPage resultPage = homePage.openPage()
+                .clickOnDeparturePlace()
+                .inputDeparturePlace(testLocations.getDeparturePlace())
+                .clickOnDestinationPlace()
+                .inputDestination(testLocations.getDestinationPlace())
+                .clickOnRoundTripButton()
+                .clickOnDepartDateButton()
+                .clickOnReturnDateButton()
+                .clickOnSearchButton();
 
-//        String resultRoute = resultPage.getRoute();
-//        System.out.println(resultRoute);
-//        Assert.assertEquals(EXPECTED_ROUTE, resultRoute);
+        String resultRoute = resultPage.getRoute();
+        System.out.println(resultRoute);
+        Assert.assertEquals(EXPECTED_ROUTE, resultRoute);
 
     }
+}
 
 
