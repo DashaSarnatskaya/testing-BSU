@@ -7,7 +7,7 @@ import page.BelaviaHomeResultPage;
 import page.TimetableResultPage;
 import service.LocationsCreator;
 
-public class HomePageTests extends CommonConditions {
+public class BelaviaHomePageTests extends CommonConditions {
 
     private final String EXPECTED_AIRPORT = "SVO";
     private final String EXPECTED_PRICE = "132,73 BYN";
