@@ -19,15 +19,6 @@ public class BelaviaSuggestionsPage extends AbstractPage {
         return null;
     }
 
-    @Override
-    protected WebElement findByLocator(By locator) {
-        return super.findByLocator(locator);
-    }
-
-    @Override
-    protected WebElement findByLocatorClickable(By locator) {
-        return super.findByLocatorClickable(locator);
-    }
 
     public BelaviaSuggestionsResultPage clickOnLocation() {
         WebElement element = findByLocator(locationLocator);

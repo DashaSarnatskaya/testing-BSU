@@ -30,6 +30,8 @@ public class BelaviaHomePage extends AbstractPage {
     private final By memberIdInputLocator = By.xpath("//input[contains(@id, 'MemberId')]");
     private final By passwordInputLocator = By.xpath("//input[contains(@id, 'Password')]");
     private final By singInButton = By.xpath("//button[contains(@class, 'login')]");
+    private final By menuButton=By.xpath("//a[contains(@id,'main-menu')]");
+    private final By timetableButton=By.xpath("//a[contains(@href,'/time-table/')]");
 
     public BelaviaHomePage(WebDriver driver) {
         super(driver);
@@ -153,5 +155,16 @@ public class BelaviaHomePage extends AbstractPage {
         WebElement element = findByLocator(singInButton);
         element.click();
         return new BelaviaHomeResultPage(driver);
+    }
+    public BelaviaHomePage clickOnMenuButton(){
+        WebElement element=findByLocator(menuButton);
+        element.click();
+        return this;
+    }
+
+    public TimetablePage clickOnTimeTableButton(){
+        WebElement element=findByLocator(timetableButton);
+        element.click();
+        return new TimetablePage(driver);
     }
 }

@@ -44,20 +44,5 @@ public class BelaviaHomeResultPage extends AbstractPage {
     public String getUserName() {
         return getElementText(userNameLocator);
     }
-
-    @Override
-    protected WebElement findByLocator(By locator) {
-        return super.findByLocator(locator);
-    }
-
-    @Override
-    protected WebElement findByLocatorClickable(By locator) {
-        return super.findByLocatorClickable(locator);
-    }
-
-    @Override
-    protected List<WebElement> findAll(By locator) {
-        return super.findAll(locator);
-    }
 }
 

@@ -1,60 +1,81 @@
 package page;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class TimetablePage {
+public class TimetablePage extends AbstractPage {
     public static String TABLE_PAGE_URL = "https://ibe.belavia.by/";
     private WebDriver driver;
 
-    private By wayButton = By.xpath("//label[@for = 'journeyType_0']");
-    private By placeOfDepartureInputLocator = By.xpath("//input[@id='origin']");
-    private By destinationInputLocator = By.xpath("//input[@id='destination']");
-
-    private By tudaCalendarButton = By.xpath("//*[@id='departing']");
-    private By obratnoCalendarButton = By.xpath("//*[@id='returning']");
-
-    private By searchButton = By.xpath("//button[text()='Найти']");
-
-
-    private By menuButton = By.xpath("//a[@id='select-main-menu']");
-    private By timetableButton = By.xpath("//a[text()='Расписание рейсов']");
+    private final By oneWayButton = By.xpath("//label[contains(@for,'journeyType_1')]");
+    private final By departurePlaceInputLocator = By.xpath("//input[contains(@id,'origin')]");
+    private final By destinationPlaceInputLocator = By.xpath("//input[contains(@id,'destination')]");
+    private final By locationLocator = By.xpath("//div[contains(@class,'trigger-input')]//div[@class='trigger']");
+    private final By calendarButton=By.xpath("//div[contains(@id,'departing')]");
+    private final By departDateButton=By.xpath("//div[@class='month']//div[text()=26]");
+    private final By searchButton=By.xpath("//button[@type='submit']");
 
     public TimetablePage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
-    public WebElement findByLocator(By locator) {
-        return new WebDriverWait(driver, 100).until(ExpectedConditions.presenceOfElementLocated(locator));
+    @Override
+    protected AbstractPage openPage() {
+        return null;
     }
-
-    public TimetablePage inputPlaceOfDeparture(String placeOfDeparture) {
-        findByLocator(placeOfDepartureInputLocator).sendKeys(placeOfDeparture);
-        return this;
-    }
-
-    public TimetablePage inputDestination(String destination) {
-        findByLocator(destinationInputLocator).sendKeys(destination);
-        return this;
-    }
-
 
     public TimetablePage clickOnOneWayButton() {
-        findByLocator(wayButton).click();
+        findByLocator(oneWayButton).click();
+        return this;
+    }
+    public TimetablePage clickOnDeparturePlace() {
+        WebElement element = findByLocatorClickable(locationLocator);
+        element.click();
         return this;
     }
 
-    public TimetablePage clickOnTudaCalendarButton() {
-        findByLocator(tudaCalendarButton).click();
+    public TimetablePage clickOnDestinationPlace() {
+        WebElement element = findAll(locationLocator).get(1);
+        element.click();
         return this;
     }
 
-    public TimetablePage clickOnObratnoCalendarButton() {
-        findByLocator(obratnoCalendarButton).click();
+    public TimetablePage inputDeparturePlace(String departurePlace) {
+        WebElement element = findByLocator(departurePlaceInputLocator);
+        element.sendKeys(departurePlace);
+        element.sendKeys(Keys.ARROW_UP);
+        element.sendKeys(Keys.ARROW_UP);
+        element.sendKeys(Keys.ENTER);
         return this;
+    }
+
+    public TimetablePage inputDestination(String destinationPlace) {
+        WebElement element = findByLocator(destinationPlaceInputLocator);
+        element.sendKeys(destinationPlace);
+        element.sendKeys(Keys.ARROW_UP);
+        element.sendKeys(Keys.ARROW_UP);
+        element.sendKeys(Keys.ENTER);
+        return this;
+    }
+    public TimetablePage clickOnCalendarButton() {
+        findByLocator(calendarButton).click();
+        return this;
+    }
+
+    public TimetablePage clickOnDepartDateButton() {
+        findByLocator(departDateButton).click();
+        return this;
+    }
+
+    public TimetableResultPage clickOnSearchButton() {
+        WebElement element = findByLocator(searchButton);
+        element.click();
+        return new TimetableResultPage(driver);
     }
 
 }
+
