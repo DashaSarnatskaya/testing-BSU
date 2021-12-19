@@ -27,8 +27,9 @@ public class BelaviaSearchTicketsTest extends CommonConditions {
                 .clickOnSearchButton();
         resultPage.openPage();
 
-        String resultFlightNumber = resultPage.getFlightNumber();
-        Assert.assertEquals(EXPECTED_AIRPORT, resultFlightNumber);
+       String resultAirportName = resultPage.getAirportName();
+       System.out.println(resultAirportName);
+       Assert.assertEquals(EXPECTED_AIRPORT, resultAirportName);
     }
 
     @Test

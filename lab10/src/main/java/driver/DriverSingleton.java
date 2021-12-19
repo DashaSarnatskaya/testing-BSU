@@ -20,7 +20,7 @@ public class DriverSingleton {
                 driver = new FirefoxDriver();
             }
             ChromeOptions options = new ChromeOptions();
-           // options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
+            // options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver(options);
         }
@@ -28,7 +28,7 @@ public class DriverSingleton {
     }
 
     public static void closeDriver() {
-       // driver.quit();
-       // driver = null;
+        driver.quit();
+        driver = null;
     }
 }

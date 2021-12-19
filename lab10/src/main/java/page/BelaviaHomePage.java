@@ -17,7 +17,7 @@ public class BelaviaHomePage extends AbstractPage {
     private final By locationLocator = By.xpath("//a[@class='trigger']");
     private final By oneWayButton = By.xpath("//label[@for = 'JourneySpan_Ow']");
     private final By roundTripButton = By.xpath("//label[@for = 'JourneySpan_Rt']");
-    private final By calendarButton = By.xpath("//i[contains(@class,'icon-calendar')]");
+    private final By calendarButton = By.xpath("//div[contains(@class,'ui-date-input')]//a[contains(@class,'trigger')]");
     private final By departDateButton = By.xpath("//td[@data-year='2022']//a[text()='20']");
     private final By returnDateButton = By.xpath("///td[@data-year='2022']//a[text()='22']");
     private final By searchButton = By.xpath("//button[contains(@onclick,'kupit')]");
