@@ -11,6 +11,8 @@ public class BelaviaHomeResultPage extends AbstractPage {
 
     private final By flightNumberLocator = By.xpath("//div[text()='SVO']");
     private final By priceForEconomTicketsLocator=By.xpath("//div[@class='price-value']");
+    private final By routeLocator=By.xpath("//div[contains(@class, 'h2')]");
+    private final By userNameLocator=By.xpath("//span[text()='TATSIANA SHUBENOK']");
 
     public BelaviaHomeResultPage(WebDriver driver) {
         super(driver);
@@ -30,7 +32,12 @@ public class BelaviaHomeResultPage extends AbstractPage {
     public String getCurrentUrl() {
         return driver.getCurrentUrl();
     }
-
+    public String getRoute(){
+        return getElementListText(routeLocator);
+    }
+public String getUserName(){
+        return getElementText(userNameLocator);
+}
     @Override
     protected WebElement findByLocator(By locator) {
         return super.findByLocator(locator);

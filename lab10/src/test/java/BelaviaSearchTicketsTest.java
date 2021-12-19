@@ -10,6 +10,7 @@ public class BelaviaSearchTicketsTest extends CommonConditions {
 
     private final String EXPECTED_AIRPORT = "SVO";
     private final String EXPECTED_PRICE = "140,46 BYN";
+    private final String EXPECTED_ROUTE = "Минск - Москва";
 
     @Test
     public void searchTicketsTest() {
@@ -44,6 +45,11 @@ public class BelaviaSearchTicketsTest extends CommonConditions {
                 .clickOnReturnDateButton()
                 .clickOnSearchButton();
         resultPage.openPage();
+
+        String resultRoute=resultPage.getRoute();
+        System.out.println(resultRoute);
+        Assert.assertEquals(EXPECTED_ROUTE,resultRoute);
+
     }
 
 

@@ -6,7 +6,7 @@ import page.BelaviaHomePage;
 import page.TimetablePage;
 
 public class BelaviaViewTest extends CommonConditions {
-    private final String EXPECTED_FLIGHT_NUMBER="B2 741";
+    private final String EXPECTED_FLIGHT_NUMBER="B2 736";
 
     @Test
     public void viewSuggestions() throws InterruptedException {

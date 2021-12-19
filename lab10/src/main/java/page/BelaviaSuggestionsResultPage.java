@@ -9,7 +9,7 @@ import java.util.List;
 
 public class BelaviaSuggestionsResultPage extends AbstractPage{
 
-    private final By flightNumberLocator=By.xpath("//*[@id='body']/div/div[2]/div/form/div[1]/div[4]/div/div[1]/div[1]/div[2]/div/div/span");
+    private final By flightNumberLocator=By.xpath("//span[text()='736']");
     public BelaviaSuggestionsResultPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);

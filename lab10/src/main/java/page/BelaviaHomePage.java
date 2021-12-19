@@ -17,13 +17,19 @@ public class BelaviaHomePage extends AbstractPage {
     private final By locationLocator = By.xpath("//a[@class='trigger']");
     private final By oneWayButton = By.xpath("//label[@for = 'JourneySpan_Ow']");
     private final By roundTripButton = By.xpath("//label[@for = 'JourneySpan_Rt']");
-    private final By calendarButton = By.xpath("//div[@class='wrapper ui-trigger-input ui-date-input'][1]//child::i");
-    private final By departDateButton = By.xpath("//*[@id='calendar']/div/div[2]/table/tbody/tr[4]/td[4]/a");
-    private final By returnDateButton = By.xpath("//*[@id='calendar']/div/div[2]/table/tbody/tr[4]/td[6]/a");
-    private final By searchButton = By.xpath("//button[@class='button btn-large btn btn-b2-green ui-corner-all']");
-    private final By suggestionsButton = By.xpath("/html/body/div[4]/div[3]/div/div[1]/a");
+    private final By calendarButton = By.xpath("//i[contains(@class,'icon-calendar')]");
+    private final By departDateButton = By.xpath("//td[@data-year='2022']//a[text()='20']");
+    private final By returnDateButton = By.xpath("///td[@data-year='2022']//a[text()='22']");
+    private final By searchButton = By.xpath("//button[contains(@onclick,'kupit')]");
+    private final By suggestionsButton = By.xpath("//div[@class='offers clear']//a[contains(@href,'/predlozheniya/')]");
     private final By languageButton=By.xpath("//a[@id='select-lang']");
     private final By enLangButton=By.xpath("//a[@data-iso='EN']");
+    private final By logInButton=By.xpath("//a[contains(@id, 'select-member')]");
+    private final By memberLocator=By.xpath("//label[contains(@for,'MemberId')]");
+    private final By passwordLocator=By.xpath("//label[contains(@for,'Password')]");
+    private final By memberIdInputLocator=By.xpath("//input[contains(@id, 'MemberId')]");
+    private final By passwordInputLocator=By.xpath("//input[contains(@id, 'Password')]");
+    private final By singInButton=By.xpath("//button[contains(@class, 'login')]");
 
     public BelaviaHomePage(WebDriver driver) {
         super(driver);
@@ -107,6 +113,35 @@ public BelaviaHomePage clickOnReturnDateButton(){
     }
     public BelaviaHomeResultPage clickOnEnLangButton(){
         WebElement element = findByLocator(enLangButton);
+        element.click();
+        return new BelaviaHomeResultPage(driver);
+    }
+
+    public BelaviaHomePage clickOnLogInButton(){
+        findByLocator(logInButton).click();
+        return this;
+    }
+public BelaviaHomePage clickOnMemberId(){
+        findByLocatorClickable(memberLocator);
+        return this;
+}
+public BelaviaHomePage clickOnPassword(){
+        findByLocatorClickable(passwordLocator);
+        return this;
+}
+
+    public BelaviaHomePage inputMemberId(String memberId){
+        WebElement element = findByLocator(memberIdInputLocator);
+        element.sendKeys(memberId);
+        return this;
+    }
+    public BelaviaHomePage inputPassword(String password){
+        WebElement element = findByLocator(passwordInputLocator);
+        element.sendKeys(password);
+        return this;
+    }
+    public BelaviaHomeResultPage clickOnSingInButton(){
+        WebElement element=findByLocator(singInButton);
         element.click();
         return new BelaviaHomeResultPage(driver);
     }
