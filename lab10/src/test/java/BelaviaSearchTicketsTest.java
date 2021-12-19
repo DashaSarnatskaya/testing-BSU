@@ -32,20 +32,20 @@ public class BelaviaSearchTicketsTest extends CommonConditions {
        // Assert.assertEquals(EXPECTED_AIRPORT, resultAirportName);
     }
 
-    @Test
-    public void searchTicketsRoundTripTest() {
-        Location testLocations = LocationsCreator.locationsFromProperty();
-        BelaviaHomePage homePage = new BelaviaHomePage(driver);
-        BelaviaHomeResultPage resultPage = homePage.openPage()
-                .clickOnDeparturePlace()
-                .inputDeparturePlace(testLocations.getDeparturePlace())
-                .clickOnDestinationPlace()
-                .inputDestination(testLocations.getDestinationPlace())
-                .clickOnRoundTripButton()
-                .clickOnDepartDateButton()
-                .clickOnReturnDateButton()
-                .clickOnSearchButton();
-        resultPage.openPage();
+//    @Test
+//    public void searchTicketsRoundTripTest() {
+//        Location testLocations = LocationsCreator.locationsFromProperty();
+//        BelaviaHomePage homePage = new BelaviaHomePage(driver);
+//        BelaviaHomeResultPage resultPage = homePage.openPage()
+//                .clickOnDeparturePlace()
+//                .inputDeparturePlace(testLocations.getDeparturePlace())
+//                .clickOnDestinationPlace()
+//                .inputDestination(testLocations.getDestinationPlace())
+//                .clickOnRoundTripButton()
+//                .clickOnDepartDateButton()
+//                .clickOnReturnDateButton()
+//                .clickOnSearchButton();
+//        resultPage.openPage();
 
 //        String resultRoute = resultPage.getRoute();
 //        System.out.println(resultRoute);
@@ -54,4 +54,3 @@ public class BelaviaSearchTicketsTest extends CommonConditions {
     }
 
 
-}
