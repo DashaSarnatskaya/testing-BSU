@@ -13,7 +13,7 @@ public class BelaviaSearchTicketsTest extends CommonConditions {
     private final String EXPECTED_ROUTE = "Минск - Москва";
 
     @Test
-    public void searchTicketsTest() {
+    public void searchTicketsOnWayTripTest() {
         Location testLocations = LocationsCreator.locationsFromProperty();
         BelaviaHomePage homePage = new BelaviaHomePage(driver);
         BelaviaHomeResultPage resultPage = homePage.openPage()
