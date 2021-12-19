@@ -1,10 +1,8 @@
-import model.Location;
 import model.User;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import page.BelaviaHomePage;
 import page.BelaviaHomeResultPage;
-import service.LocationsCreator;
 import service.UserCreator;
 
 public class BelaviaLogInTest extends CommonConditions {
@@ -23,7 +21,7 @@ public class BelaviaLogInTest extends CommonConditions {
                 .inputPassword(user.getPassword())
                 .clickOnSingInButton();
 
-        Assert.assertEquals(EXPECTED_USER_NAME, resultPage.getUserName());
+        Assert.assertEquals(resultPage.getUserName(), EXPECTED_USER_NAME);
 
     }
 

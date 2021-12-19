@@ -3,9 +3,10 @@ package page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class TimetableResultPage  extends AbstractPage{
+public class TimetableResultPage extends AbstractPage {
 
-    private final By arrivalTime= By.xpath("//div[@class='time' and text()='09:10']");
+    private final By arrivalTime = By.xpath("//div[@class='time' and text()='09:10']");
+
     public TimetableResultPage(WebDriver driver) {
         super(driver);
     }
@@ -15,7 +16,7 @@ public class TimetableResultPage  extends AbstractPage{
         return null;
     }
 
-    public String getArrivalTime(){
+    public String getArrivalTime() {
         return getElementText(arrivalTime);
     }
 }

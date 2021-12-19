@@ -1,13 +1,11 @@
 import model.Location;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import page.*;
 import service.LocationsCreator;
 
 public class BelaviaViewTest extends CommonConditions {
-    private final String EXPECTED_FLIGHT_NUMBER = "B2 736";
+    private final String EXPECTED_FLIGHT_NUMBER = "B2 942";
     private final String EXPECTED_ARRIVAL_TIME = "09:10";
 
     @Test
@@ -17,7 +15,7 @@ public class BelaviaViewTest extends CommonConditions {
                 .clickOnSuggestionsButton()
                 .clickOnLocation()
                 .getFlightNumber();
-        Assert.assertEquals(EXPECTED_FLIGHT_NUMBER, flightNumber);
+        Assert.assertEquals(flightNumber,EXPECTED_FLIGHT_NUMBER);
     }
 
     @Test
@@ -36,7 +34,7 @@ public class BelaviaViewTest extends CommonConditions {
                 .clickOnCalendarButton()
                 .clickOnDepartDateButton()
                 .clickOnSearchButton();
-        Assert.assertEquals(EXPECTED_ARRIVAL_TIME, timetablePage.getArrivalTime());
+        Assert.assertEquals( timetablePage.getArrivalTime(),EXPECTED_ARRIVAL_TIME);
 
     }
 }

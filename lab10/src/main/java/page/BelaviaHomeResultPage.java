@@ -2,10 +2,8 @@ package page;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
-import java.util.List;
 
 public class BelaviaHomeResultPage extends AbstractPage {
 
@@ -35,10 +33,6 @@ public class BelaviaHomeResultPage extends AbstractPage {
 
     public String getCurrentUrl() {
         return driver.getCurrentUrl();
-    }
-
-    public String getRoute() {
-        return getElementListText(routeLocator);
     }
 
     public String getUserName() {

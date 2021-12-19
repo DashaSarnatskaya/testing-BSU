@@ -10,7 +10,6 @@ public class BelaviaSearchTicketsTest extends CommonConditions {
 
     private final String EXPECTED_AIRPORT = "SVO";
     private final String EXPECTED_PRICE = "132,73 BYN";
-    private final String EXPECTED_ROUTE = "Минск - Москва";
 
     @Test
     public void searchTicketsOnWayTripTest() {
@@ -26,7 +25,7 @@ public class BelaviaSearchTicketsTest extends CommonConditions {
                 .clickOnDepartDateButton()
                 .clickOnSearchButton();
 
-        Assert.assertEquals(EXPECTED_AIRPORT, resultPage.getAirportName());
+        Assert.assertEquals(resultPage.getAirportName(), EXPECTED_AIRPORT);
     }
 
     @Test
@@ -43,7 +42,7 @@ public class BelaviaSearchTicketsTest extends CommonConditions {
                 .clickOnReturnDateButton()
                 .clickOnSearchButton();
 
-        Assert.assertEquals(EXPECTED_PRICE, resultPage.getPrice());
+        Assert.assertEquals(resultPage.getPrice(), EXPECTED_PRICE);
 
     }
 }

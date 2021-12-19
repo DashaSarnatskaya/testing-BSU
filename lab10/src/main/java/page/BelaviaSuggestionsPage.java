@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 
 public class BelaviaSuggestionsPage extends AbstractPage {
-    private final By locationLocator = By.xpath("//a[contains(@href,'TB')]");
+    private final By locationLocator = By.xpath("//a[contains(@href,'LED')]");
 
     public BelaviaSuggestionsPage(WebDriver driver) {
         super(driver);

@@ -12,6 +12,6 @@ public class BelaviaChangeLanguageTest extends CommonConditions {
         BelaviaHomeResultPage resultPage = homePage.openPage()
                 .clickOnLanguageButton()
                 .clickOnEnLangButton();
-        Assert.assertEquals(url, resultPage.getCurrentUrl());
+        Assert.assertEquals(resultPage.getCurrentUrl(), url);
     }
 }
