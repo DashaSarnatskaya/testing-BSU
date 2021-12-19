@@ -3,6 +3,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import page.BelaviaHomePage;
+import page.BelaviaHomeResultPage;
+import page.BelaviaSuggestionsResultPage;
 import page.TimetablePage;
 
 public class BelaviaViewTest extends CommonConditions {
@@ -11,10 +13,10 @@ public class BelaviaViewTest extends CommonConditions {
     @Test
     public void viewSuggestions() throws InterruptedException {
         BelaviaHomePage homePage = new BelaviaHomePage(driver);
-        String flightNumber = homePage.openPage()
+        BelaviaSuggestionsResultPage flightNumber = homePage.openPage()
                 .clickOnSuggestionsButton()
-                .clickOnLocation()
-                .getFlightNumber();
+                .clickOnLocation();
+                //.getFlightNumber();
         //Assert.assertEquals(EXPECTED_FLIGHT_NUMBER, flightNumber);
     }
 
