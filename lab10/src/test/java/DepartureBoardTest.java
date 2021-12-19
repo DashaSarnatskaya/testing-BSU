@@ -1,8 +1,6 @@
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import page.BelaviaHomePage;
-import page.BelaviaHomeResultPage;
-import page.DepartureBoardPage;
 
 public class DepartureBoardTest extends CommonConditions {
     private final static String EXPECTED_AIRPLANEE_TYPE = "Boeing 737-800";
