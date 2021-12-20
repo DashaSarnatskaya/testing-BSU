@@ -31,53 +31,53 @@ public class BelaviaHomePageTests extends CommonConditions {
         Assert.assertEquals(resultPage.getAirportName(), EXPECTED_AIRPORT);
     }
 
-    @Test
-    public void searchTicketsRoundTripTest() {
-        Location testLocations = LocationsCreator.locationsFromProperty();
-        BelaviaHomePage homePage = new BelaviaHomePage(driver);
-        BelaviaHomeResultPage resultPage = homePage.openPage()
-                .clickOnDeparturePlace()
-                .inputDeparturePlace(testLocations.getDeparturePlace())
-                .clickOnDestinationPlace()
-                .inputDestination(testLocations.getDestinationPlace())
-                .clickOnRoundTripButton()
-                .clickOnDepartDateButton()
-                .clickOnReturnDateButton()
-                .clickOnSearchButton();
-
-        Assert.assertEquals(resultPage.getPrice(), EXPECTED_PRICE);
-
-    }
-
-    @Test
-    public void viewSuggestions() {
-        BelaviaHomePage homePage = new BelaviaHomePage(driver);
-        String flightNumber = homePage.openPage()
-                .clickOnSuggestionsButton()
-                .clickOnLocation()
-                .getFlightNumber();
-        Assert.assertEquals(flightNumber, EXPECTED_FLIGHT_NUMBER);
-    }
-
-    @Test
-    public void viewTimetable() {
-        BelaviaHomePage belaviaHomePage = new BelaviaHomePage(driver);
-        Location testLocations = LocationsCreator.locationsFromProperty();
-        TimetableResultPage timetablePage = new TimetableResultPage(driver);
-        belaviaHomePage.openPage()
-                .clickOnMenuButton()
-                .clickOnTimeTableButton()
-                .clickOnOneWayButton()
-                .clickOnDeparturePlace()
-                .inputDeparturePlace(testLocations.getDeparturePlace())
-                .clickOnDestinationPlace()
-                .inputDestination(testLocations.getDestinationPlace())
-                .clickOnCalendarButton()
-                .clickOnDepartDateButton()
-                .clickOnSearchButton();
-        Assert.assertEquals(timetablePage.getArrivalTime(), EXPECTED_ARRIVAL_TIME);
-
-    }
+//    @Test
+//    public void searchTicketsRoundTripTest() {
+//        Location testLocations = LocationsCreator.locationsFromProperty();
+//        BelaviaHomePage homePage = new BelaviaHomePage(driver);
+//        BelaviaHomeResultPage resultPage = homePage.openPage()
+//                .clickOnDeparturePlace()
+//                .inputDeparturePlace(testLocations.getDeparturePlace())
+//                .clickOnDestinationPlace()
+//                .inputDestination(testLocations.getDestinationPlace())
+//                .clickOnRoundTripButton()
+//                .clickOnDepartDateButton()
+//                .clickOnReturnDateButton()
+//                .clickOnSearchButton();
+//
+//        Assert.assertEquals(resultPage.getPrice(), EXPECTED_PRICE);
+//
+//    }
+//
+//    @Test
+//    public void viewSuggestions() {
+//        BelaviaHomePage homePage = new BelaviaHomePage(driver);
+//        String flightNumber = homePage.openPage()
+//                .clickOnSuggestionsButton()
+//                .clickOnLocation()
+//                .getFlightNumber();
+//        Assert.assertEquals(flightNumber, EXPECTED_FLIGHT_NUMBER);
+//    }
+//
+//    @Test
+//    public void viewTimetable() {
+//        BelaviaHomePage belaviaHomePage = new BelaviaHomePage(driver);
+//        Location testLocations = LocationsCreator.locationsFromProperty();
+//        TimetableResultPage timetablePage = new TimetableResultPage(driver);
+//        belaviaHomePage.openPage()
+//                .clickOnMenuButton()
+//                .clickOnTimeTableButton()
+//                .clickOnOneWayButton()
+//                .clickOnDeparturePlace()
+//                .inputDeparturePlace(testLocations.getDeparturePlace())
+//                .clickOnDestinationPlace()
+//                .inputDestination(testLocations.getDestinationPlace())
+//                .clickOnCalendarButton()
+//                .clickOnDepartDateButton()
+//                .clickOnSearchButton();
+//        Assert.assertEquals(timetablePage.getArrivalTime(), EXPECTED_ARRIVAL_TIME);
+//
+//    }
 }
 
 
