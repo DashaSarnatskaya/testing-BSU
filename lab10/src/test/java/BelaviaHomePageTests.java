@@ -49,35 +49,35 @@ public class BelaviaHomePageTests extends CommonConditions {
 
     }
 
-//    @Test
-//    public void viewSuggestions() throws InterruptedException {
-//        BelaviaHomePage homePage = new BelaviaHomePage(driver);
-//        String flightNumber = homePage.openPage()
-//                .clickOnSuggestionsButton()
-//                .clickOnLocation()
-//                .getFlightNumber();
-//        Assert.assertEquals(flightNumber,EXPECTED_FLIGHT_NUMBER);
-//    }
-//
-//    @Test
-//    public void viewTimetable() {
-//        BelaviaHomePage belaviaHomePage = new BelaviaHomePage(driver);
-//        Location testLocations = LocationsCreator.locationsFromProperty();
-//        TimetableResultPage timetablePage = new TimetableResultPage(driver);
-//        belaviaHomePage.openPage()
-//                .clickOnMenuButton()
-//                .clickOnTimeTableButton()
-//                .clickOnOneWayButton()
-//                .clickOnDeparturePlace()
-//                .inputDeparturePlace(testLocations.getDeparturePlace())
-//                .clickOnDestinationPlace()
-//                .inputDestination(testLocations.getDestinationPlace())
-//                .clickOnCalendarButton()
-//                .clickOnDepartDateButton()
-//                .clickOnSearchButton();
-//        Assert.assertEquals( timetablePage.getArrivalTime(),EXPECTED_ARRIVAL_TIME);
-//
-//    }
+    @Test
+    public void viewSuggestions() throws InterruptedException {
+        BelaviaHomePage homePage = new BelaviaHomePage(driver);
+        String flightNumber = homePage.openPage()
+                .clickOnSuggestionsButton()
+                .clickOnLocation()
+                .getFlightNumber();
+        Assert.assertEquals(flightNumber,EXPECTED_FLIGHT_NUMBER);
+    }
+
+    @Test
+    public void viewTimetable() {
+        BelaviaHomePage belaviaHomePage = new BelaviaHomePage(driver);
+        Location testLocations = LocationsCreator.locationsFromProperty();
+        TimetableResultPage timetablePage = new TimetableResultPage(driver);
+        belaviaHomePage.openPage()
+                .clickOnMenuButton()
+                .clickOnTimeTableButton()
+                .clickOnOneWayButton()
+                .clickOnDeparturePlace()
+                .inputDeparturePlace(testLocations.getDeparturePlace())
+                .clickOnDestinationPlace()
+                .inputDestination(testLocations.getDestinationPlace())
+                .clickOnCalendarButton()
+                .clickOnDepartDateButton()
+                .clickOnSearchButton();
+        Assert.assertEquals( timetablePage.getArrivalTime(),EXPECTED_ARRIVAL_TIME);
+
+    }
 }
 
 

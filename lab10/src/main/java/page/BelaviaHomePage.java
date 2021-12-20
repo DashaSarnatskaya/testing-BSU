@@ -92,7 +92,7 @@ public class BelaviaHomePage extends AbstractPage {
     }
 
     public BelaviaHomePage clickOnDepartDateButton() {
-        findByLocator(departDateButton).click();
+        findByLocatorClickable(departDateButton).click();
         return this;
     }
 
