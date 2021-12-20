@@ -50,13 +50,13 @@ public class BelaviaHomePageTests extends CommonConditions {
     }
 
     @Test
-    public void viewSuggestions() throws InterruptedException {
+    public void viewSuggestions() {
         BelaviaHomePage homePage = new BelaviaHomePage(driver);
         String flightNumber = homePage.openPage()
                 .clickOnSuggestionsButton()
                 .clickOnLocation()
                 .getFlightNumber();
-        Assert.assertEquals(flightNumber,EXPECTED_FLIGHT_NUMBER);
+        Assert.assertEquals(flightNumber, EXPECTED_FLIGHT_NUMBER);
     }
 
     @Test
@@ -75,7 +75,7 @@ public class BelaviaHomePageTests extends CommonConditions {
                 .clickOnCalendarButton()
                 .clickOnDepartDateButton()
                 .clickOnSearchButton();
-        Assert.assertEquals( timetablePage.getArrivalTime(),EXPECTED_ARRIVAL_TIME);
+        Assert.assertEquals(timetablePage.getArrivalTime(), EXPECTED_ARRIVAL_TIME);
 
     }
 }
