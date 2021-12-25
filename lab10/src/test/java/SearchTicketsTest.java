@@ -7,7 +7,7 @@ import service.LocationsCreator;
 
 public class SearchTicketsTest  extends CommonConditions{
     private final String EXPECTED_AIRPORT = "SVO";
-    private final String EXPECTED_PRICE = "132,73 BYN";
+    private final String EXPECTED_PRICE = "132,52 BYN";
     @Test
     public void searchTicketsOnWayTripTest() {
         Location testLocations = LocationsCreator.locationsFromProperty();
@@ -18,7 +18,6 @@ public class SearchTicketsTest  extends CommonConditions{
                 .clickOnDestinationPlace()
                 .inputDestination(testLocations.getDestinationPlace())
                 .clickOnOneWayButton()
-                .clickOnCalendarButton()
                 .clickOnDepartDateButton()
                 .clickOnSearchButton();
 

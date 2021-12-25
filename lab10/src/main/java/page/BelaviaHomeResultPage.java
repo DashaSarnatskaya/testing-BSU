@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 public class BelaviaHomeResultPage extends AbstractPage {
 
     private final By flightNumberLocator = By.xpath("//div[text()='SVO']");
-    private final By priceForEconomTicketsLocator = By.xpath("//div[@class='price-value' and text()='132,73 BYN']");
+    private final By priceForEconomTicketsLocator = By.xpath("//div[@class='price-value' and text()='132,52 BYN']");
     private final By routeLocator = By.xpath("//div[contains(@class, 'h2')]");
     private final By userNameLocator = By.xpath("//span[text()='TATSIANA SHUBENOK']");
 
