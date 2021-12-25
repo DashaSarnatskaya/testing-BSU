@@ -9,7 +9,7 @@ public class BelaviaViewTest extends CommonConditions {
 
 
     private final String EXPECTED_FLIGHT_NUMBER = "B2 942";
-    private final String EXPECTED_ARRIVAL_TIME = "09:10";
+    private final String EXPECTED_ARRIVAL_TIME = "12:55";
 
 
     @Test
