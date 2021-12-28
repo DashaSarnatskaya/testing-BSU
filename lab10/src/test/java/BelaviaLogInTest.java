@@ -1,9 +1,10 @@
 import model.User;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import page.BelaviaHomePage;
 import page.BelaviaHomeResultPage;
 import service.UserCreator;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class BelaviaLogInTest extends CommonConditions {
 
@@ -20,9 +21,7 @@ public class BelaviaLogInTest extends CommonConditions {
                 .clickOnPassword()
                 .inputPassword(user.getPassword())
                 .clickOnSingInButton();
-
-        Assert.assertEquals(resultPage.getUserName(), EXPECTED_USER_NAME);
-
+        assertThat(resultPage.getUserName()).isEqualTo(EXPECTED_USER_NAME);
     }
 
 }

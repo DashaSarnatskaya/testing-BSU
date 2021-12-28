@@ -1,16 +1,14 @@
 import model.Location;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import page.BelaviaHomePage;
 import page.TimetableResultPage;
 import service.LocationsCreator;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 public class BelaviaViewTest extends CommonConditions {
 
-
-    private final String EXPECTED_FLIGHT_NUMBER = "B2 945";
-    private final String EXPECTED_ARRIVAL_TIME = "10:00";
-
+    private final String EXPECTED_TIME = "09:00";
 
     @Test
     public void viewSuggestions() {
@@ -19,7 +17,8 @@ public class BelaviaViewTest extends CommonConditions {
                 .clickOnSuggestionsButton()
                 .clickOnLocation()
                 .getFlightNumber();
-        Assert.assertEquals(flightNumber, EXPECTED_FLIGHT_NUMBER);
+
+        assertThat(flightNumber).contains("945");
     }
 
     @Test
@@ -38,7 +37,8 @@ public class BelaviaViewTest extends CommonConditions {
                 .clickOnCalendarButton()
                 .clickOnDepartDateButton()
                 .clickOnSearchButton();
-        Assert.assertEquals(timetablePage.getArrivalTime(), EXPECTED_ARRIVAL_TIME);
+
+        assertThat(timetablePage.getArrivalTime()).isGreaterThan(EXPECTED_TIME);
 
     }
 }

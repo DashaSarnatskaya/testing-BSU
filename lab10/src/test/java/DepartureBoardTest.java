@@ -1,9 +1,9 @@
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import page.BelaviaHomePage;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 public class DepartureBoardTest extends CommonConditions {
-    private final static String EXPECTED_AIRPLANEE_TYPE = "Boeing 737-800";
 
     @Test
     public void showDepartureBoard() {
@@ -17,6 +17,6 @@ public class DepartureBoardTest extends CommonConditions {
                 .clickOnShowButton()
                 .getAirplaneType();
 
-        Assert.assertEquals(airplaneType, EXPECTED_AIRPLANEE_TYPE);
+        assertThat(airplaneType).doesNotEndWith("5");
     }
 }
