@@ -12,7 +12,7 @@ public class TimetablePage extends AbstractPage {
     private final By destinationPlaceInputLocator = By.xpath("//input[contains(@id,'destination')]");
     private final By locationLocator = By.xpath("//div[contains(@class,'trigger-input')]//div[@class='trigger']");
     private final By calendarButton = By.xpath("//div[contains(@id,'departing')]");
-    private final By departDateButton = By.xpath("//div[@class='month']//div[text()=26]");
+    private final By departDateButton = By.xpath("//div[@class='month']//div[text()=29]");
     private final By searchButton = By.xpath("//button[@type='submit']");
 
     public TimetablePage(WebDriver driver) {

@@ -5,9 +5,10 @@ import page.BelaviaHomePage;
 import page.BelaviaHomeResultPage;
 import service.LocationsCreator;
 
-public class SearchTicketsTest  extends CommonConditions{
+public class SearchTicketsTest extends CommonConditions {
     private final String EXPECTED_AIRPORT = "SVO";
-    private final String EXPECTED_PRICE = "132,52 BYN";
+    private final String EXPECTED_PRICE = "132,54 BYN";
+
     @Test
     public void searchTicketsOnWayTripTest() {
         Location testLocations = LocationsCreator.locationsFromProperty();

@@ -6,7 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class BelaviaSuggestionsResultPage extends AbstractPage {
 
-    private final By flightNumberLocator = By.xpath("//span[text()='942']");
+    private final By flightNumberLocator = By.xpath("//span[text()='945']");
 
     public BelaviaSuggestionsResultPage(WebDriver driver) {
         super(driver);
